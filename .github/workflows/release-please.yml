@@ -13,3 +13,5 @@ jobs:
         with:
           release-type: simple
           package-name: port-edit-tool
+          extra-files: |
+            VERSION
