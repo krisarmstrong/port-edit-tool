@@ -18,7 +18,9 @@
 #include <string.h>
 
 
-#define PROGRAM_VERSION "1.04"
+#ifndef PROGRAM_VERSION
+#define PROGRAM_VERSION "dev"
+#endif
 
 #define MOD_FILENAME  "port_mod.pcap"
 #define MOD_FILENAME2 "del_dups.pcap"

@@ -30,3 +30,7 @@ dist/
 
 # OS
 Thumbs.db
+
+# Tooling defaults
+.env
+.env.*
