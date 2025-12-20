@@ -18,7 +18,9 @@
 #include <string.h>
 
 
-#define PROGRAM_VERSION "1.02"
+#ifndef PROGRAM_VERSION
+#define PROGRAM_VERSION "dev"
+#endif
 
 #define MOD_FILENAME "port_mod.pcap"
 
