@@ -2,21 +2,26 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main, master]
   pull_request:
 
 jobs:
-  smoke:
+  build:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
+
+      - name: Install dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential
+
+      - name: Build
+        run: make build
+
+      - name: Upload binary
+        uses: actions/upload-artifact@v4
         with:
-          python-version: "3.14"
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "25"
-      - name: Run smoke tests
-        run: bash scripts/smoke.sh
+          name: voip_port_edit
+          path: build/voip_port_edit
