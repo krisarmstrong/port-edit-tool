@@ -21,7 +21,7 @@ jobs:
         run: make build
 
       - name: Upload binary
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: voip_port_edit
           path: build/voip_port_edit
